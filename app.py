@@ -65,5 +65,5 @@ def predict(id_client):
 # Run app.
 #lancement de l'application
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 
