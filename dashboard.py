@@ -61,8 +61,7 @@ elif (int(id_input) in liste_id):
                                                            mode="classification")
         idx = X.index[0]
         exp = lime_explainer.explain_instance(X.loc[idx], model.predict_proba, num_features=10)
-
+ 
         components.html(exp.as_html(), height=800)
         exp.as_list()
-
 
