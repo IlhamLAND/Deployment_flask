@@ -77,7 +77,6 @@ pydantic==1.9.0
 pydeck==0.7.1
 pyls-spyder==0.4.0
 Pympler==1.0.1
-pyodbc===4.0.0-unsupported
 pyreadline==2.1
 pytest==6.2.4
 python-editor==1.0.4
