@@ -56,7 +56,7 @@ def predict(id_client):
     dict_final = {'prediction' : str(classification),
                   'proba' : pred_prob }
     return render_template('index.html', valeur=percent, prediction=classification)
-    #return jsonify(dict_final)
+    return jsonify(dict_final)
 
 # Define endpoint for flask
 #app.add_url_rule('/predict', 'predict', predict)
