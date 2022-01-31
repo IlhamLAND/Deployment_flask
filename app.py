@@ -26,8 +26,8 @@ app=Flask(__name__)
 
 @app.route('/')
 def home():
-    #return render_template("index.html")
-    return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
+    return render_template("index.html")
+    #return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
 
 
 @app.route('/credit/<id_client>', methods=['GET'])
@@ -55,8 +55,8 @@ def predict(id_client):
             classification = 'Acceptation de la demande de credit'
     dict_final = {'prediction' : str(classification),
                   'proba' : pred_prob }
-    #return render_template('index.html', valeur=percent, prediction=classification)
-    return jsonify(dict_final)
+    return render_template('index.html', valeur=percent, prediction=classification)
+    #return jsonify(dict_final)
 
 # Define endpoint for flask
 #app.add_url_rule('/predict', 'predict', predict)
