@@ -1,4 +1,3 @@
-
 from flask import Flask,render_template,request , jsonify
 
 import pandas as pd
@@ -9,7 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 
 #Load Data
-dataframe = pd.read_csv("data_balanced_2.csv")
+dataframe = pd.read_csv("data_modelisation.csv")
 all_id_client = list(dataframe['SK_ID_CURR'].unique())
 
 y = dataframe['TARGET']
@@ -26,8 +25,9 @@ app=Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template("index.html")
-    #return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
+    return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
+    #return render_template("index.html")
+
 
 
 @app.route('/credit/<id_client>', methods=['GET'])
@@ -55,8 +55,10 @@ def predict(id_client):
             classification = 'Acceptation de la demande de credit'
     dict_final = {'prediction' : str(classification),
                   'proba' : pred_prob }
-    return render_template('index.html', valeur=percent, prediction=classification)
-    #return jsonify(dict_final)
+
+    return jsonify(dict_final)
+    #return render_template('index.html', valeur=percent, prediction=classification)
+
 
 # Define endpoint for flask
 #app.add_url_rule('/predict', 'predict', predict)
@@ -66,4 +68,3 @@ def predict(id_client):
 #lancement de l'application
 if __name__ == "__main__":
     app.run(debug=True)
-
