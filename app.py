@@ -26,8 +26,8 @@ app=Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template("index.html")
-    #return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
+    #return render_template("index.html")
+    return "Prédiction rapide de l'acceptation ou non d'un prêt pour l'entreprise 'Prêt à dépenser' "
 
 
 @app.route('/credit/<id_client>', methods=['GET'])
