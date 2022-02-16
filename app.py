@@ -5,7 +5,7 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 from sklearn.linear_model import LogisticRegression
-import imblearn *
+import imblearn 
 from imblearn import over_sampling
 from imblearn.over_sampling import SMOTE
 from imblearn.pipeline import Pipeline, make_pipeline
