@@ -19,14 +19,9 @@ y = dataframe['TARGET']
 dataframe.drop(columns='TARGET', inplace=True)
 
 # Chargement du modèle :
-
 model = pickle.load(open('credit_final.pkl','rb'))
 
-
-
 app=Flask(__name__)
-
-
 
 @app.route('/')
 def home():
