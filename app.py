@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from imblearn.pipeline import Pipeline, make_pipeline
 import pickle
 
 #Load Data
