@@ -6,6 +6,7 @@ import warnings
 warnings.filterwarnings('ignore')
 from sklearn.linear_model import LogisticRegression
 import imblearn 
+from imblearn.combine import SMOTETomek
 from imblearn import under_sampling, over_sampling
 from imblearn.over_sampling import SMOTE
 from imblearn.pipeline import Pipeline, make_pipeline
